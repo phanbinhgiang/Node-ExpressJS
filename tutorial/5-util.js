@@ -1,6 +1,5 @@
 const sayHi = (name) => {
-    console.log(`hello ${name}`);
-}
+  console.log(`hello ${name}`);
+};
 
-module.exports = sayHi
-    
+module.exports = sayHi;
