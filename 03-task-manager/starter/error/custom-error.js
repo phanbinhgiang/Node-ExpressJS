@@ -1,12 +1,7 @@
-class CustomAPIError extends Error {
-  constructor(message, statusCode) {
-    super(message);
-    this.statusCode = statusCode;
-  }
-}
-
-const createCustomError = (msg, statusCode) => {
-  return new CustomAPIError(msg, statusCode);
+const customError = (ID) => {
+  const error = new Error(`Not Found Task ${ID}`);
+  error.status = 404;
+  return error;
 };
 
-module.exports = { createCustomError, CustomAPIError };
+module.exports = customError;
