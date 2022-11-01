@@ -3,7 +3,6 @@ const BadRequestError = require('../errors/bad-request');
 
 const login = async (req, res) => {
   const { username, password } = req.body;
-  console.log(username, password);
   if (!username || !password) {
     throw new BadRequestError('Please provide username and password');
   }
@@ -16,8 +15,6 @@ const login = async (req, res) => {
 };
 
 const dashboard = async (req, res) => {
-  console.log(req.user);
-
   const luckyNumber = Math.floor(Math.random() * 100);
   res.status(200).json({
     msg: `Hello, ${req.user.username}`,
