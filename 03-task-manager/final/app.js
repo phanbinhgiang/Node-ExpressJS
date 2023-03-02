@@ -17,11 +17,11 @@ app.use('/api/v1/tasks', tasks);
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URI);
+    await connectDB(process.env.MONGO_URI || 'mongodb+srv://giangphan:0379579687@nodejs.izpzkyo.mongodb.net/03-TASK-MANAGER?retryWrites=true&w=majority');
     app.listen(port, () =>
       console.log(`Server is listening on port ${port}...`)
     );
